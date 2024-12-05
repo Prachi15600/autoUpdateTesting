@@ -42,6 +42,7 @@
 //   });
 // });
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import { app, BrowserWindow, ipcMain } from 'electron/main';
 import path from 'node:path';
@@ -63,6 +64,8 @@ const createWindow = () => {
 
   win.loadFile('index.html'); // Load the main HTML file
 };
+
+// autoUpdater.checkForUpdatesAndNotify();
 
 // Quit the app when all windows are closed (only on Windows)
 app.on('window-all-closed', () => {

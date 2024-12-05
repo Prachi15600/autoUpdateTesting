@@ -17,8 +17,28 @@
     "type": "git",
     "url": "https://github.com/Prachi15600/autoUpdateTesting"
   },
-  "directories": {
-    "output": "out"
+  "build": {
+    "appId": "com.example.myapp",
+    "productName": "MyElectronApp",
+    "directories": {
+      "output": "out"
+    },
+    "files": [
+      "**/*",
+      "node_modules/**/*",
+      "node_modules/update-electron-app/**/*",
+      "index.js",
+      "dist/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Prachi15600",
+        "repo": "autoUpdateTesting"
+      }
+    ]
   },
   "config": {
     "forge": {
@@ -79,13 +99,14 @@
     "@electron-forge/publisher-github": "^7.6.0",
     "@electron/fuses": "^1.8.0",
     "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
     "nodemon": "^3.1.7",
     "rimraf": "^5.0.10"
   },
   "dependencies": {
-    "electron-builder": "^25.1.8",
     "electron-squirrel-startup": "^1.0.1",
     "electron-updater": "^6.3.9",
+    "is-url": "^1.2.4",
     "update-electron-app": "^3.0.0"
   }
 }
